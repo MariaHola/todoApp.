@@ -13,6 +13,7 @@
     <link href="./css/body.css" rel="stylesheet">
     <link href="./css/section.css" rel="stylesheet">
     <link href="./css/form.css" rel="stylesheet">
+    <link href="./css/tasks.css" rel="stylesheet">
     <title>toDoList</title>
 </head>
 
@@ -25,7 +26,7 @@
         <h2 class="section section__header">Dodaj nowe zadanie</h2>
         <div class="section section__body">
             <form class="form js-form">
-                <input class="js-newTask">
+                <input class="form form__input js-newTask" placeholder="Co jest do zrobienia?">
                 <button class="form form__button">Dodaj zadanie.</button>
             </form>
         </div>
@@ -33,7 +34,8 @@
     <section class="section">
         <h2 class="section section__header">Lista zadań</h2>
         <div class="section__body">
-            <ul class="js-tasks"></ul>
+            <ul class="tasks js-tasks"></ul>
+            <li class="tasks tasks__item js-task"></li>
         </div>
     </section>
     </main>
