@@ -1,0 +1,14 @@
+body {
+    background-color: #ddd;
+    font-family: 'Lato', sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    padding: 20px;
+    margin: 0 auto;
+}
+
