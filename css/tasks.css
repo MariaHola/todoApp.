@@ -21,10 +21,20 @@
 	padding: 0;
 }
 
-.tasks__button--done {
+.tasks__button--toggleDone {
 	background: hsl(120, 61%, 34%);
 }
 
-.tasks__content--done {
+.tasks__button--toggleDone:hover {
+	background: hsl(120, 61%, 39%);
+}
+
+.tasks__button--toggleDone:active {
+	background: hsl(120, 61%, 44%);
+}
+
+.tasks__content--Done {
 	text-decoration: line-through;
 }
+
+
