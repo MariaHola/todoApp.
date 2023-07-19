@@ -39,26 +39,27 @@
     };
 
     const render = () => {
-        let taskListHTMLContent = "";
+        let tasksListHTMLContent = "";
 
         for(const task of tasks) {
-            taskListHTMLContent += `
+            tasksListHTMLContent += `
             <li 
             class="tasks tasks__item js-task" ${task.done ? " style=\"text-decoration: line-through\"" : ""}>
             
-            <button class="tasks tasks__button tasks__button--toggleDone js-toggleDone">${task.done ? "✔" : ""}</button>
+            <button class="tasks tasks__button tasks__button--toggleDone js-toggleDone">
+            ${task.done ? "✔" : ""}
+            </button>
 
-            <span class="tasks__content${task.done ? "tasks__content--done" : ""}"
+            <span class="tasks__content${ task.done ? " tasks__content--done" : ""}">${task.content}</span>
             <button class="tasks tasks__button--remove js-remove">🗑</button>
-            ${task.content}
             </li>
             `;
         }
 
-document.querySelector(".js-tasks").innerHTML = taskListHTMLContent;
+document.querySelector(".js-tasks").innerHTML = tasksListHTMLContent;
 
 bindRemoveEvents();
-
+bindToggleDonEvents();
     };
 
 
