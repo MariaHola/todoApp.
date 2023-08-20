@@ -1,6 +1,7 @@
 {
 
     const tasks = [];
+    let hideDoneTasks = false;
 
     const removeTask = (taskIndex) => {
         tasks.splice(taskIndex, 1);
@@ -13,7 +14,10 @@
     }
 
     const addNewTask = (newTaskContent) => {
-        task.push({ content: newTaskContent });
+        tasks = [
+            ...tasks,
+            { content: newTaskContent },
+        ];
         render();
     };
 
