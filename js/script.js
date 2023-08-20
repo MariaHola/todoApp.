@@ -38,7 +38,7 @@
         });
     };
 
-    const render = () => {
+    const renderTasks = () => {
         let tasksListHTMLContent = "";
 
         for(const task of tasks) {
@@ -57,9 +57,19 @@
         }
 
 document.querySelector(".js-tasks").innerHTML = tasksListHTMLContent;
+   
+};
 
-bindRemoveEvents();
-bindToggleDonEvents();
+    const renderButtons = () => {};
+
+    const bindButtonsEvents = () => {};
+
+    const render = () => {
+        renderTasks();
+        renderButtons();
+        bindRemoveEvents();
+        bindToggleDonEvents();
+        bindButtonsEvents();
     };
 
 const onFormSubmit = (event) => {
