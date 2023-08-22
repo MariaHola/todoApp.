@@ -7,7 +7,7 @@ The application has been prepared to be used also on smaller devices.
 This time is to prepare project for React. 
 
 ## Demo 
-
+https://mariahola.github.io/todoApp./
 ------
 
 ### Project in a nutshell: 
