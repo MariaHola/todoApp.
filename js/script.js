@@ -58,7 +58,8 @@
         for(const task of tasks) {
             tasksListHTMLContent += `
             <li 
-            class="tasks tasks__item js-task" ${task.done ? " style=\"text-decoration: line-through\"" : ""}>
+            class="tasks tasks__item js-task" ${task.done ? " style=\"text-decoration: line-through\"" 
+            : " style=\"text-decoration: none\""}>
             
             <button class="tasks tasks__button tasks__button--toggleDone js-toggleDone">
             ${task.done ? "✔" : ""}
@@ -69,6 +70,7 @@
             </li>
             `;
         }
+
 
 document.querySelector(".js-tasks").innerHTML = tasksListHTMLContent;
    
