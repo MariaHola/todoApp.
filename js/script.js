@@ -108,6 +108,20 @@ const renderButtons = () => {
     `;
 };
 
+const bindButtonsEvents = () => {
+    const markAllDoneButton = document.querySelector(".js-markAllDone");
+
+    if (markAllDoneButton) {
+        markAllDoneButton.addEventListener("click", markTasksDone);
+    }
+
+    const toggleHideDoneTasksButton = document.querySelector(".js-toggleHideDoneTasksButton");
+
+    if (toggleHideDoneTasksButton) {
+        toggleHideDoneTasksButton.addEventListener("click", toggleHideDoneTasks);
+    }
+};
+
 
 document.querySelector(".js-task").innerHTML = taskToHTML;
    
