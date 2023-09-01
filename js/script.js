@@ -109,7 +109,7 @@ const renderButtons = () => {
 };
 
 
-document.querySelector(".js-tasks").innerHTML = taskToHTML;
+document.querySelector(".js-task").innerHTML = taskToHTML;
    
 };
 
