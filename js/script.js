@@ -52,27 +52,64 @@
         });
     };
 
-    const renderTasks = () => {
-        let tasksListHTMLContent = "";
+    const markTasksDone = () => {
+tasks = tasks.map((task) => ({
+...task,
+done:true,
+}));
+render();
+    };
 
-        for(const task of tasks) {
-            tasksListHTMLContent += `
-            <li 
-            class="tasks tasks__item js-task" ${task.done ? " style=\"text-decoration: line-through\"" 
-            : " style=\"text-decoration: none\""}>
+const toggleHideDoneTasks = () => {
+hideDoneTasks = !hideDoneTasks;
+render();
+    };
+
+    const renderTasks = () => {
+        const taskToHTML = task => `
+        <li class="
+        tasks__item${task.done && hideDoneTasks ? "tasks__item--hiden" : ""}
+        js-tasks
+    ">
             
             <button class="tasks tasks__button tasks__button--toggleDone js-toggleDone">
             ${task.done ? "✔" : ""}
             </button>
 
-            <span class="tasks__content${ task.done ? " tasks__content--done" : ""}">${task.content}</span>
-            <button class="tasks tasks__button--remove js-remove">🗑</button>
+            <span class="tasks__content${ task.done ? " tasks__content--done" : ""}">
+            ${task.content}
+            </span>
+            <button class="tasks tasks__button--remove js-remove">
+            🗑
+            </button>
             </li>
-            `;
-        }
+        `;
+
+        const tasksElement = document.querySelector(".js-tasks");
+        tasksElement.innerHTML = tasks.map(taskToHTML).join("");
+        };
+
+const renderButtons = () => {
+    const buttonsElement = document.querySelector(".js-buttons");
+
+    if (!tasks.lenght) {
+        buttonsElement.innerHTML = "";
+        return;
+    }
+
+    buttonsElement.innerHTML = `
+    <button class="buttons__button js-toggleHideDoneTasks">
+    ${hideDoneTasks ? "Pokaż" : "Ukryj"} ukończone
+    </button>
+    <button class="buttons__button js-markAllDone"
+    ${ tasks.every(({ done }) => done) ? " disabled" : ""}>
+    Ukończ wszystkie
+    </button>
+    `;
+};
 
 
-document.querySelector(".js-tasks").innerHTML = tasksListHTMLContent;
+document.querySelector(".js-tasks").innerHTML = taskToHTML;
    
 };
 
