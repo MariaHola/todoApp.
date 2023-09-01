@@ -69,7 +69,7 @@ render();
         const taskToHTML = task => `
         <li class="
         tasks__item${task.done && hideDoneTasks ? "tasks__item--hiden" : ""}
-        js-tasks
+        js-task
     ">
             
             <button class="tasks tasks__button tasks__button--toggleDone js-toggleDone">
@@ -160,4 +160,3 @@ const onFormSubmit = (event) => {
     };
 
     init();
-}
